@@ -10,7 +10,7 @@ import {Projection} from "ol/proj";
 
 const extent = [0, 0, 3111, 2209];
 const projection = new Projection({
-  code: 'xkcd-image',
+  code: 'tierras-habitadas',
   units: 'pixels',
   extent: extent,
 });
