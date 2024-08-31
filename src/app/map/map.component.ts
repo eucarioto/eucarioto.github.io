@@ -7,13 +7,6 @@ import TileLayer from 'ol/layer/Tile';
 import Static from "ol/source/ImageStatic";
 import ImageLayer from "ol/layer/Image";
 import {Projection} from "ol/proj";
-import {
-  defaults as defaultInteractions,
-} from 'ol/interaction.js';
-import ol from "ol/dist/ol";
-import interaction = ol.interaction;
-import {Kinetic} from "ol";
-import {DragPan} from "ol/interaction";
 
 const projection = new Projection({
   code: 'tierras-habitadas',
