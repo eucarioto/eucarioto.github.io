@@ -7,14 +7,19 @@ import TileLayer from 'ol/layer/Tile';
 import Static from "ol/source/ImageStatic";
 import ImageLayer from "ol/layer/Image";
 import {Projection} from "ol/proj";
+import {
+  defaults as defaultInteractions,
+} from 'ol/interaction.js';
+import ol from "ol/dist/ol";
+import interaction = ol.interaction;
+import {Kinetic} from "ol";
+import {DragPan} from "ol/interaction";
 
-const extent = [0, 0, 3111, 2209];
 const projection = new Projection({
   code: 'tierras-habitadas',
   units: 'pixels',
-  extent: extent,
+  extent: [0, 0, 3111, 2209],
 });
-
 
 @Component({
   selector: 'app-map',
@@ -31,14 +36,19 @@ export class MapComponent implements OnInit {
           source: new Static({
             url: 'map.png',
             projection: projection,
-            imageExtent: extent,
+            imageExtent: [0, 0, 3111, 2209],
           }),
         }),
       ],
+      /*interactions: defaultInteractions().extend
+      ([
+        new DragPan({kinetic: new Kinetic(0, 0, 0)})
+      ]),*/
       target: 'map',
       view: new View({
         projection: projection,
         center: [1555, 1105],
+        extent: [0, 0, 3111, 2209],
         zoom: 2,
         maxZoom: 4,
         minZoom: 2,
